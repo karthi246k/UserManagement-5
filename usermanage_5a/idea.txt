@@ -1,0 +1,59 @@
+| Assignment 4                             | Assignment 5                                        |
+| ---------------------------------------- | --------------------------------------------------- |
+| Hibernate                                | JAX-WS + Apache CXF                                 |
+| DataAccess layer                         | WebService layer                                    |
+| Apache Ant                               | Apache Maven                                        |
+| Servlet → DataAccess                     | Servlet → WebService → DataAccess                   |
+| Direct database access through Hibernate | WebService ultimately accesses DB through Hibernate |
+| **Creates User + Address tables**        | **Uses DataAccess from Assignment 4**               |
+| **Creates the foundation**               | **Calls the existing DataAccess methods**           |
+
+
+
+ASSIGNMENT 5
+
+Build and run using Maven.
+
+Servlet
+   ↓
+JAX-WS + Apache CXF WebService
+   ↓
+DataAccess  ← from Assignment 4
+   ↓
+Hibernate   ← from Assignment 4
+   ↓
+MySQL
+
+
+
+                    ┌── InsertUserServlet
+                    │
+                    ├── UpdateUserServlet
+                    │
+                    ├── DeleteUserServlet
+                    │
+                    └── ListUserServlet
+                              ↓
+                         SOAP request
+                              ↓
+                         Apache CXF
+                              ↓
+                       UserWebService
+                              ↓
+                         DataAccess
+                              ↓
+                           Hibernate
+                              ↓
+                            MySQL
+
+Servlet
+   ↓
+CXF Proxy
+   ↓
+SOAP WebService
+   ↓
+UserWebServiceImpl
+   ↓
+DataAccess
+   ↓
+Hibernate

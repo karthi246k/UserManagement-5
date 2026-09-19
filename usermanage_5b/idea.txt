@@ -1,0 +1,11 @@
+Servlet
+   ↓
+Jersey Client
+   ↓
+REST WebService
+   ↓
+UserResource
+   ↓
+DataAccess
+   ↓
+Hibernate

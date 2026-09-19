@@ -1,0 +1,32 @@
+CREATE TABLE address_5a (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    streetAddress VARCHAR(255),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    ZipCode VARCHAR(20)
+);
+
+CREATE TABLE user_5a (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    email VARCHAR(150),
+    homeAddressId INT,
+    officeAddressId INT,
+
+    FOREIGN KEY (homeAddressId) REFERENCES address_5a(id),
+    FOREIGN KEY (officeAddressId) REFERENCES address_5a(id)
+);
+
+INSERT INTO address_5a (streetAddress, City, State, ZipCode)
+VALUES 
+('MG Road', 'Kochi', 'Kerala', '682016'),
+('Kakkanad', 'Kochi', 'Kerala', '682030'),
+('Main Street', 'Trivandrum', 'Kerala', '695001'),
+('Pattom', 'Trivandrum', 'Kerala', '686001');
+
+INSERT INTO user_5a
+(name, phone, email, homeAddressId, officeAddressId)
+VALUES
+('Arjun Nair', '9876543212', 'arjun@gmail.com', 1, 3),
+('Meera Joseph', '9876543213', 'meera@gmail.com', 2, 4);

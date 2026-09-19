@@ -1,0 +1,52 @@
+usermanage_5a/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── user/
+│       │           │
+│       │           ├── model/
+│       │           │   ├── User.java
+│       │           │   └── Address.java
+│       │           │
+│       │           ├── servlet/
+│       │           │   ├── InsertUser.java
+│       │           │   ├── UpdateUser.java
+│       │           │   ├── DeleteUser.java
+│       │           │   ├── ListUser.java
+│       │           │   └── FindUser.java
+│       │           │
+│       │           ├── service/
+│       │           │   ├── UserWebService.java
+│       │           │   └── UserWebServiceImpl.java
+│       │           │
+│       │           ├── client/
+│       │           │   └── UserApiClient.java
+│       │           │
+│       │           ├── config/
+│       │           │   └── ApiUrls.java
+│       │           │
+│       │           └── datahandle/
+│       │               └── DataAccess.java
+│       │
+│       ├── resources/
+│       │   ├── hibernate.cfg.xml
+│       │   └── application.properties
+│       │
+│       └── webapp/
+│           │
+│           ├── WEB-INF/
+│           │   ├── web.xml
+│           │   └── beans.xml
+│           │
+│           ├── home.jsp
+│           ├── add.jsp
+│           ├── update.jsp
+│           ├── list.jsp
+│           └── find.jsp
+│
+├── pom.xml
+│
+└── target/
+    └── UserManage_5a.war

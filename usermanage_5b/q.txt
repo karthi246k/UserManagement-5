@@ -1,0 +1,15 @@
+Part 1
+Write a jax-ws webservice using apache cxf and apache maven. No IntelliJ/eclipse plugins should be used. The methods below should be present in the webservice. These methods should use a User class similar to the User class used for the servlet assignment. The methods also should have the same functionality as they had in in the servlet assignment. These methods will need to call the corresponding methods in DataAccess class done in previous assignment using hibernate. 
+insertUser(parameter - a User object)
+updateUser(parameter - a User object)
+deleteUser(parameter - a User object)
+listAllUsers(parameter - none)
+findUser(parameter - int userId)
+Call the WebService methods from your Servlet to do the database operations in your Servlet assignment.
+
+Part 2
+Do the same assignment with a  jax-rs webservice using jersey.
+
+
+
+

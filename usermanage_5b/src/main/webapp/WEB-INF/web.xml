@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Insert Servlet -->
+
+    <servlet>
+        <servlet-name>InsertUser</servlet-name>
+        <servlet-class>com.user.servlet.InsertUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InsertUser</servlet-name>
+        <url-pattern>/insert</url-pattern>
+    </servlet-mapping>
+
+    <!-- Update Servlet -->
+
+    <servlet>
+        <servlet-name>UpdateUser</servlet-name>
+        <servlet-class>com.user.servlet.UpdateUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateUser</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Servlet -->
+
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>com.user.servlet.DeleteUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <!-- List Servlet -->
+
+    <servlet>
+        <servlet-name>ListUser</servlet-name>
+        <servlet-class>com.user.servlet.ListUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListUser</servlet-name>
+        <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+
+    <!-- Find Servlet -->
+
+    <servlet>
+        <servlet-name>FindUser</servlet-name>
+        <servlet-class>com.user.servlet.FindUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FindUser</servlet-name>
+        <url-pattern>/find</url-pattern>
+    </servlet-mapping>
+
+    <!-- Jersey Servlet -->
+
+    <servlet>
+        <servlet-name>JerseyServlet</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.user.service</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JerseyServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
