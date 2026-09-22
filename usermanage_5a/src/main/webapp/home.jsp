@@ -14,6 +14,10 @@
         <a class="home" href="./">Home</a>
     </nav>
 
+    <div class="technology-box">
+        <h2>JAX-WS -- Apache CXF -- Maven</h2>
+    </div>
+
     <main class="main">
 
         <div class="box">

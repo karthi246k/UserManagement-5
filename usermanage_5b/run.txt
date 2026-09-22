@@ -2,5 +2,4 @@ cd "C:\Program Files\Apache Software Foundation\Tomcat 11.0\bin"
 startup.bat
 
 mvn clean package
-
 copy /Y "target\UserManage_5b.war" "C:\Program Files\Apache Software Foundation\Tomcat 11.0\webapps\UserManage_5b.war"
