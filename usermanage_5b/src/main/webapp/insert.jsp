@@ -55,71 +55,294 @@
         </h1>
 
 
-        <form
-            action="insert"
-            method="post"
-            class="user-form"
-            id="userForm">
+        <!-- ==================== Main Layout ==================== -->
+
+        <div class="main-layout">
 
 
-            <!-- ==================== User Details ==================== -->
+            <!-- ==================== 75% FORM ==================== -->
 
-            <div class="form-section">
+            <div class="form-area">
 
-                <div class="section-heading">
-                    User Details
+                <div class="form-wrapper">
+
+
+                    <form
+                        action="insert"
+                        method="post"
+                        class="user-form"
+                        id="userForm">
+
+
+                        <!-- ==================== User Details ==================== -->
+
+                        <div class="form-section">
+
+                            <div class="section-heading">
+                                User Details
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value="Rahul Menon"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Phone
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="phone"
+                                        name="phone"
+                                        value="9876543214"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group full-width">
+
+                                    <label for="email">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value="rahul@gmail.com"
+                                        required>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================== Home Address ==================== -->
+
+                        <div class="form-section">
+
+                            <div class="section-heading">
+                                Home Address
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group full-width">
+
+                                    <label for="homeStreetAddress">
+                                        Street Address
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="homeStreetAddress"
+                                        name="homeStreetAddress"
+                                        value="Kaloor"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="homeCity">
+                                        City
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="homeCity"
+                                        name="homeCity"
+                                        value="Kochi"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="homeState">
+                                        State
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="homeState"
+                                        name="homeState"
+                                        value="Kerala"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="homeZipCode">
+                                        Zip Code
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="homeZipCode"
+                                        name="homeZipCode"
+                                        value="682017"
+                                        required>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================== Office Address ==================== -->
+
+                        <div class="form-section">
+
+                            <div class="section-heading">
+                                Office Address
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group full-width">
+
+                                    <label for="officeStreetAddress">
+                                        Street Address
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="officeStreetAddress"
+                                        name="officeStreetAddress"
+                                        value="Infopark Road"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="officeCity">
+                                        City
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="officeCity"
+                                        name="officeCity"
+                                        value="Kochi"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="officeState">
+                                        State
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="officeState"
+                                        name="officeState"
+                                        value="Kerala"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="officeZipCode">
+                                        Zip Code
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="officeZipCode"
+                                        name="officeZipCode"
+                                        value="682042"
+                                        required>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
                 </div>
 
-
-                <div class="form-grid">
-
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value="Rahul Menon"
-                            required>
-
-                    </div>
+            </div>
 
 
-                    <div class="form-group">
+            <!-- ==================== 25% STICKY BUTTON AREA ==================== -->
 
-                        <label for="phone">
-                            Phone
-                        </label>
+            <div class="action-area">
 
-                        <input
-                            type="text"
-                            id="phone"
-                            name="phone"
-                            value="9876543214"
-                            required>
-
-                    </div>
+                <div class="action-buttons">
 
 
-                    <div class="form-group full-width">
+                    <button
+                        type="button"
+                        class="insert-btn"
+                        onclick="showConfirmPopup();">
 
-                        <label for="email">
-                            Email
-                        </label>
+                        Add User
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value="rahul@gmail.com"
-                            required>
+                    </button>
 
-                    </div>
+
+                    <button
+                        type="button"
+                        class="clear-btn"
+                        onclick="clearForm();">
+
+                        Clear
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="cancelInsert();">
+
+                        Cancel
+
+                    </button>
 
 
                 </div>
@@ -127,191 +350,13 @@
             </div>
 
 
-            <!-- ==================== Home Address ==================== -->
-
-            <div class="form-section">
-
-                <div class="section-heading">
-                    Home Address
-                </div>
-
-
-                <div class="form-grid">
-
-
-                    <div class="form-group full-width">
-
-                        <label for="homeStreetAddress">
-                            Street Address
-                        </label>
-
-                        <input
-                            type="text"
-                            id="homeStreetAddress"
-                            name="homeStreetAddress"
-                            value="Kaloor"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="homeCity">
-                            City
-                        </label>
-
-                        <input
-                            type="text"
-                            id="homeCity"
-                            name="homeCity"
-                            value="Kochi"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="homeState">
-                            State
-                        </label>
-
-                        <input
-                            type="text"
-                            id="homeState"
-                            name="homeState"
-                            value="Kerala"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="homeZipCode">
-                            Zip Code
-                        </label>
-
-                        <input
-                            type="text"
-                            id="homeZipCode"
-                            name="homeZipCode"
-                            value="682017"
-                            required>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- ==================== Office Address ==================== -->
-
-            <div class="form-section">
-
-                <div class="section-heading">
-                    Office Address
-                </div>
-
-
-                <div class="form-grid">
-
-
-                    <div class="form-group full-width">
-
-                        <label for="officeStreetAddress">
-                            Street Address
-                        </label>
-
-                        <input
-                            type="text"
-                            id="officeStreetAddress"
-                            name="officeStreetAddress"
-                            value="Infopark Road"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="officeCity">
-                            City
-                        </label>
-
-                        <input
-                            type="text"
-                            id="officeCity"
-                            name="officeCity"
-                            value="Kochi"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="officeState">
-                            State
-                        </label>
-
-                        <input
-                            type="text"
-                            id="officeState"
-                            name="officeState"
-                            value="Kerala"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="officeZipCode">
-                            Zip Code
-                        </label>
-
-                        <input
-                            type="text"
-                            id="officeZipCode"
-                            name="officeZipCode"
-                            value="682042"
-                            required>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- ==================== Submit ==================== -->
-
-            <div class="submit-area">
-
-                <button
-                    type="button"
-                    class="insert-btn"
-                    onclick="showConfirmPopup();">
-
-                    Insert User
-
-                </button>
-
-            </div>
-
-
-        </form>
+        </div>
 
     </div>
 
 
     <!-- ================================================= -->
-    <!--              CONFIRMATION POPUP                   -->
+    <!--              CONFIRMATION POPUP                  -->
     <!-- ================================================= -->
 
     <div
@@ -359,7 +404,7 @@
 
 
     <!-- ================================================= -->
-    <!--                  SUCCESS POPUP                    -->
+    <!--                  SUCCESS POPUP                   -->
     <!-- ================================================= -->
 
     <%
@@ -397,7 +442,7 @@
 
 
     <!-- ================================================= -->
-    <!--                    ERROR POPUP                    -->
+    <!--                    ERROR POPUP                   -->
     <!-- ================================================= -->
 
     <%
@@ -439,17 +484,12 @@
     <script>
 
 
-        // Show confirmation popup.
         function showConfirmPopup() {
 
             const form =
                 document.getElementById("userForm");
 
 
-            /*
-             * Check required fields before
-             * showing the confirmation popup.
-             */
             if (!form.checkValidity()) {
 
                 form.reportValidity();
@@ -461,18 +501,18 @@
 
             document.getElementById("confirmPopup")
                     .style.display = "flex";
+
         }
 
 
-        // Close confirmation popup.
         function closeConfirmPopup() {
 
             document.getElementById("confirmPopup")
                     .style.display = "none";
+
         }
 
 
-        // Submit the form after confirmation.
         function confirmInsert() {
 
             document.getElementById("userForm").submit();
@@ -480,7 +520,28 @@
         }
 
 
-        // Go to users list after successful insertion.
+        function clearForm() {
+
+            const form =
+                document.getElementById("userForm");
+
+
+            form.querySelectorAll("input").forEach(function(input) {
+
+                input.value = "";
+
+            });
+
+        }
+
+
+        function cancelInsert() {
+
+            window.location.href = "./";
+
+        }
+
+
         function goToUsers() {
 
             window.location.href = "list";
@@ -488,12 +549,12 @@
         }
 
 
-        // Close error popup.
         function closeErrorPopup() {
 
             window.location.href = "insert";
 
         }
+
 
     </script>
 

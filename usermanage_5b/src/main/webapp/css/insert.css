@@ -73,7 +73,7 @@ body {
 .page-container {
     width: 100%;
 
-    max-width: 1000px;
+    max-width: 1400px;
 
     margin: 0 auto;
 
@@ -88,6 +88,34 @@ body {
     font-weight: 600;
 
     margin-bottom: 35px;
+}
+
+
+/* ==================== Main Layout ==================== */
+
+.main-layout {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 75% 25%;
+
+    align-items: start;
+}
+
+
+/* ==================== Form Area ==================== */
+
+.form-area {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.form-wrapper {
+    width: 90%;
 }
 
 
@@ -196,27 +224,56 @@ body {
 }
 
 
-/* ==================== Submit Area ==================== */
+/* ================================================= */
+/*              RIGHT ACTION AREA                   */
+/* ================================================= */
 
-.submit-area {
+.action-area {
+    width: 100%;
+
+    position: sticky;
+
+    top: 30px;
+
+    height: fit-content;
+
     display: flex;
 
     justify-content: center;
 
-    margin-top: 5px;
+    align-items: flex-start;
+
+    padding: 20px;
 }
 
 
-/* ==================== Insert Button ==================== */
+/* ==================== Action Buttons ==================== */
+
+.action-buttons {
+    width: 100%;
+
+    max-width: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* ==================== Add User Button ==================== */
 
 .insert-btn {
+    width: 100%;
+
     background: #111111;
 
     color: #ffffff;
 
     border: 1px solid #111111;
 
-    padding: 10px 24px;
+    padding: 11px 20px;
 
     border-radius: 4px;
 
@@ -236,8 +293,70 @@ body {
 }
 
 
+/* ==================== Clear Button ==================== */
+
+.clear-btn {
+    width: 100%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #111111;
+
+    padding: 11px 20px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.clear-btn:hover {
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+/* ==================== Cancel Button ==================== */
+
+.cancel-btn {
+    width: 100%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #111111;
+
+    padding: 11px 20px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
 /* ================================================= */
-/*                  POPUP OVERLAY                    */
+/*                  POPUP OVERLAY                   */
 /* ================================================= */
 
 .popup-overlay {
@@ -262,7 +381,7 @@ body {
 
 
 /* ================================================= */
-/*              CONFIRMATION POPUP                   */
+/*              CONFIRMATION POPUP                 */
 /* ================================================= */
 
 .popup-box {
@@ -346,7 +465,7 @@ body {
 }
 
 
-/* ==================== Cancel Button ==================== */
+/* ==================== Cancel Popup Button ==================== */
 
 .popup-cancel-btn {
     background: #ffffff;
@@ -376,7 +495,7 @@ body {
 
 
 /* ================================================= */
-/*                  SUCCESS POPUP                    */
+/*                  SUCCESS POPUP                   */
 /* ================================================= */
 
 .success-popup-box {
@@ -448,31 +567,48 @@ body {
     color: #111111;
 }
 
+
+/* ================================================= */
+/*                  ERROR POPUP                     */
+/* ================================================= */
+
 .error-popup-box {
     width: 390px;
+
     background: #ffffff;
+
     border: 1px solid #111111;
+
     border-radius: 6px;
+
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
     text-align: center;
+
     padding: 30px;
 }
 
 .error-popup-box h2 {
     font-size: 20px;
+
     font-weight: 600;
+
     margin-bottom: 12px;
 }
 
 .error-popup-box p {
     font-size: 14px;
+
     line-height: 1.5;
+
     color: #444444;
+
     margin-bottom: 25px;
 }
 
+
 /* ================================================= */
-/*                  RESPONSIVE                      */
+/*                  RESPONSIVE                     */
 /* ================================================= */
 
 @media (max-width: 700px) {
@@ -519,6 +655,21 @@ body {
     }
 
 
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-area {
+        width: 100%;
+    }
+
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+
     .form-grid {
         grid-template-columns: 1fr;
 
@@ -533,8 +684,32 @@ body {
     }
 
 
+    .action-area {
+        position: static;
+
+        padding: 20px 0;
+    }
+
+
+    .action-buttons {
+        max-width: none;
+
+        flex-direction: row;
+    }
+
+
+    .insert-btn,
+    .clear-btn,
+    .cancel-btn {
+        flex: 1;
+
+        padding: 10px 12px;
+    }
+
+
     .popup-box,
-    .success-popup-box {
+    .success-popup-box,
+    .error-popup-box {
         width: calc(100% - 30px);
 
         padding: 25px;
@@ -550,5 +725,4 @@ body {
     .popup-cancel-btn {
         width: 100%;
     }
-
 }
