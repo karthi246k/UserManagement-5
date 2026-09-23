@@ -96,7 +96,7 @@
 
                     <th
                         class="section-heading user-section"
-                        colspan="4">
+                        colspan="5">
 
                         User Details
 
@@ -153,6 +153,13 @@
                     <th class="column-heading id-column">
 
                         ID
+
+                    </th>
+
+
+                    <th class="column-heading username-column">
+
+                        Username
 
                     </th>
 
@@ -309,6 +316,13 @@
                     <td>
 
                         <%= user.getId() %>
+
+                    </td>
+
+
+                    <td>
+
+                        <%= user.getUsername() %>
 
                     </td>
 

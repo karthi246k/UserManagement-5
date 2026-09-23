@@ -44,13 +44,30 @@
 
             <div class="search-box">
 
-                <form action="find" method="get">
+                <form action="find" method="get" id="findForm">
 
-                    <label>User ID:</label>
+                    <select name="searchType"
+                            id="searchType"
+                            required>
+
+                        <option value="id">
+                            User ID
+                        </option>
+
+                        <option value="username">
+                            Username
+                        </option>
+
+                    </select>
+
 
                     <input type="number"
                            name="id"
+                           id="searchInput"
+                           placeholder="Enter User ID"
+                           autocomplete="off"
                            required>
+
 
                     <input type="submit"
                            value="Find User">
@@ -78,6 +95,13 @@
                         <th>ID</th>
                         <td>
                             <%= user.getId() %>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Username</th>
+                        <td>
+                            <%= user.getUsername() %>
                         </td>
                     </tr>
 
@@ -190,7 +214,8 @@
 
 
             <%
-                } else if (request.getParameter("id") != null) {
+                } else if (request.getParameter("id") != null ||
+                           request.getParameter("username") != null) {
             %>
 
 
@@ -209,6 +234,38 @@
         </div>
 
     </main>
+
+
+    <!-- ==================== JavaScript ==================== -->
+
+    <script>
+
+        const searchType =
+            document.getElementById("searchType");
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+
+        searchType.addEventListener("change", function() {
+
+            if (this.value === "id") {
+
+                searchInput.type = "number";
+                searchInput.name = "id";
+                searchInput.placeholder = "Enter User ID";
+
+            } else {
+
+                searchInput.type = "text";
+                searchInput.name = "username";
+                searchInput.placeholder = "Enter Username";
+
+            }
+
+        });
+
+    </script>
 
 
 </body>

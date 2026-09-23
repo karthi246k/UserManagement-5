@@ -80,11 +80,32 @@ public class DataAccess {
     }
 
     // 5. Find a user and adress from the database using the user ID.
-    public User findUser(int userId) {
+    public User findUser(String searchType, String value) {
+
         Session session = sessionFactory.openSession();
+
         try {
-            return session.find(User.class, userId);
+
+            if ("id".equals(searchType)) {
+
+                int userId = Integer.parseInt(value);
+
+                return session.find(User.class, userId);
+
+            } else if ("username".equals(searchType)) {
+
+                return session.createQuery(
+                        "FROM User WHERE username = :username",
+                        User.class
+                )
+                .setParameter("username", value)
+                .uniqueResult();
+            }
+
+            return null;
+
         } finally {
+
             session.close();
         }
     }

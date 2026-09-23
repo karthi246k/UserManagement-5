@@ -28,9 +28,9 @@ public class UserApiClient {
                 .post(jakarta.ws.rs.client.Entity.entity(user, MediaType.APPLICATION_JSON));
     }
 
-    public static User findUser(int userId) {
+    public static User findUser(String searchType, String value) {
         return client
-                .target(ApiUrls.find_user_url + "/" + userId)
+                .target(ApiUrls.find_user_url + "/" + searchType + "/" + value)
                 .request(MediaType.APPLICATION_JSON)
                 .get(User.class);
     }

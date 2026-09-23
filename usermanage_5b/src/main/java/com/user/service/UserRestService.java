@@ -37,12 +37,14 @@ public class UserRestService {
     }
 
 
-
     @GET
-    @Path("/finduser/{id}")
+    @Path("/finduser/{searchType}/{value}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User findUser(@PathParam("id") int userId) {
-        return dataAccess.findUser(userId);
+    public User findUser(
+            @PathParam("searchType") String searchType,
+            @PathParam("value") String value) {
+
+        return dataAccess.findUser(searchType, value);
     }
 
     @PUT
@@ -59,7 +61,7 @@ public class UserRestService {
     @Produces(MediaType.APPLICATION_JSON)
     public User deleteUser(@PathParam("id") int userId) {
 
-        User user = dataAccess.findUser(userId);
+        User user = dataAccess.findUser("id", String.valueOf(userId));
 
         if (user != null) {
             dataAccess.deleteUser(user);

@@ -14,7 +14,7 @@ import com.user.model.User;
 public class InsertUser extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
-                          HttpServletResponse response)
+                         HttpServletResponse response)
             throws ServletException, IOException {
 
         request.getRequestDispatcher("insert.jsp").forward(request, response);
@@ -26,9 +26,26 @@ public class InsertUser extends HttpServlet {
 
         try {
 
+            String username = request.getParameter("username");
             String name = request.getParameter("name");
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
+
+            User existingUser =
+                    UserApiClient.findUser("username", username);
+
+            if (existingUser != null) {
+
+                request.setAttribute(
+                        "insertError",
+                        "Username already exists. Please choose another username."
+                );
+
+                request.getRequestDispatcher("insert.jsp")
+                       .forward(request, response);
+
+                return;
+            }
 
             Address homeAddress = new Address();
 
@@ -60,9 +77,11 @@ public class InsertUser extends HttpServlet {
 
             User user = new User();
 
+            user.setUsername(username);
             user.setName(name);
             user.setPhone(phone);
             user.setEmail(email);
+
             user.setHomeAddress(homeAddress);
             user.setOfficeAddress(officeAddress);
 
@@ -70,8 +89,7 @@ public class InsertUser extends HttpServlet {
 
             request.setAttribute("insertSuccess", true);
 
-            request.getRequestDispatcher("insert.jsp")
-                   .forward(request, response);
+            request.getRequestDispatcher("insert.jsp").forward(request, response);
 
         } catch (Exception e) {
 

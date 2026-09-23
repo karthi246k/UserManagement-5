@@ -12,24 +12,45 @@ import com.user.model.User;
 
 public class FindUser extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request,
+                          HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idParameter = request.getParameter("id");
+        String searchType =
+                request.getParameter("searchType");
 
-        if (idParameter == null || idParameter.trim().isEmpty()) {
+        String value;
 
-            request.getRequestDispatcher("find.jsp").forward(request, response);
+        if ("id".equals(searchType)) {
+
+            value = request.getParameter("id");
+
+        } else if ("username".equals(searchType)) {
+
+            value = request.getParameter("username");
+
+        } else {
+
+            request.getRequestDispatcher("find.jsp")
+                   .forward(request, response);
 
             return;
         }
 
-        int userId = Integer.parseInt(idParameter);
+        if (value == null || value.trim().isEmpty()) {
 
-        User user = UserApiClient.findUser(userId);
+            request.getRequestDispatcher("find.jsp")
+                   .forward(request, response);
+
+            return;
+        }
+
+        User user =
+                UserApiClient.findUser(searchType, value);
 
         request.setAttribute("user", user);
 
-        request.getRequestDispatcher("find.jsp").forward(request, response);
+        request.getRequestDispatcher("find.jsp")
+               .forward(request, response);
     }
 }

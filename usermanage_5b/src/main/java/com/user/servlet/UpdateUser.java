@@ -21,13 +21,17 @@ public class UpdateUser extends HttpServlet {
 
             int userId = Integer.parseInt(request.getParameter("id"));
 
-            User user = UserApiClient.findUser(userId);
+            User user = UserApiClient.findUser(
+                    "id",
+                    String.valueOf(userId)
+            );
 
             if (user != null) {
 
                 request.setAttribute("user", user);
 
-                request.getRequestDispatcher("update.jsp").forward(request, response);
+                request.getRequestDispatcher("update.jsp")
+                       .forward(request, response);
 
             } else {
 
@@ -54,17 +58,34 @@ public class UpdateUser extends HttpServlet {
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
 
-            String homeStreetAddress = request.getParameter("homeStreetAddress");
-            String homeCity = request.getParameter("homeCity");
-            String homeState = request.getParameter("homeState");
-            String homeZipCode = request.getParameter("homeZipCode");
+            String homeStreetAddress =
+                    request.getParameter("homeStreetAddress");
 
-            String officeStreetAddress = request.getParameter("officeStreetAddress");
-            String officeCity = request.getParameter("officeCity");
-            String officeState = request.getParameter("officeState");
-            String officeZipCode = request.getParameter("officeZipCode");
+            String homeCity =
+                    request.getParameter("homeCity");
 
-            User user = UserApiClient.findUser(userId);
+            String homeState =
+                    request.getParameter("homeState");
+
+            String homeZipCode =
+                    request.getParameter("homeZipCode");
+
+            String officeStreetAddress =
+                    request.getParameter("officeStreetAddress");
+
+            String officeCity =
+                    request.getParameter("officeCity");
+
+            String officeState =
+                    request.getParameter("officeState");
+
+            String officeZipCode =
+                    request.getParameter("officeZipCode");
+
+            User user = UserApiClient.findUser(
+                    "id",
+                    String.valueOf(userId)
+            );
 
             if (user != null) {
 
@@ -99,7 +120,10 @@ public class UpdateUser extends HttpServlet {
 
             } else {
 
-                request.setAttribute("updateError", "User not found.");
+                request.setAttribute(
+                        "updateError",
+                        "User not found."
+                );
             }
 
         } catch (Exception e) {
@@ -113,9 +137,14 @@ public class UpdateUser extends HttpServlet {
 
             try {
 
-                int userId = Integer.parseInt(request.getParameter("id"));
+                int userId =
+                        Integer.parseInt(request.getParameter("id"));
 
-                User user = UserApiClient.findUser(userId);
+                User user =
+                        UserApiClient.findUser(
+                                "id",
+                                String.valueOf(userId)
+                        );
 
                 request.setAttribute("user", user);
 
@@ -125,6 +154,7 @@ public class UpdateUser extends HttpServlet {
             }
         }
 
-        request.getRequestDispatcher("update.jsp").forward(request, response);
+        request.getRequestDispatcher("update.jsp")
+               .forward(request, response);
     }
 }
