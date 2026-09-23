@@ -28,7 +28,7 @@ public class UserWebServiceImpl implements UserWebService {
         return dataAccess.listAllUsers();
     }
 
-    public User findUser(int userId) {
-        return dataAccess.findUser(userId);
+    public User findUser(String searchType, String value) {
+        return dataAccess.findUser(searchType, value);
     }
 }

@@ -14,7 +14,7 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/user_management
+            jdbc:mysql://localhost:3306/user_manage
         </property>
 
         <property name="hibernate.connection.username">

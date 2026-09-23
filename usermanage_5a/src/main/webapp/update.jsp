@@ -26,7 +26,6 @@
 
     <title>Update User</title>
 
-    <!-- Update page CSS -->
     <link rel="stylesheet" href="css/update.css">
 
 </head>
@@ -39,9 +38,11 @@
 
 <nav class="navbar">
 
-    <!-- Home -->
+    <div class="logo">
+        User Management System
+    </div>
 
-    <a href="index.jsp">
+    <a class="home" href="./">
         Home
     </a>
 
@@ -79,6 +80,15 @@
         <h2>
             User Details
         </h2>
+
+
+        <label>
+            Username:
+        </label>
+
+        <div class="username-display">
+            <%= user.getUsername() %>
+        </div>
 
 
         <label>
@@ -220,22 +230,15 @@
 
         <div class="button-container">
 
-
-            <!-- Update User -->
-
             <input
                 type="submit"
                 value="Update User"
                 class="button update-button">
 
-
-            <!-- Reset Form -->
-
             <input
                 type="reset"
                 value="Reset"
                 class="button reset-button">
-
 
         </div>
 
@@ -251,34 +254,17 @@
         id="confirmPopup"
         class="popup-overlay">
 
-
         <div class="popup-box">
 
-
-            <!-- ==================== Title ==================== -->
-
             <div class="popup-title">
-
                 Confirm Update
-
             </div>
-
-
-            <!-- ==================== Message ==================== -->
 
             <div class="popup-message">
-
                 Are you sure you want to update this user's details?
-
             </div>
 
-
-            <!-- ==================== Buttons ==================== -->
-
             <div class="popup-buttons">
-
-
-                <!-- Cancel -->
 
                 <button
                     type="button"
@@ -289,9 +275,6 @@
 
                 </button>
 
-
-                <!-- Confirm -->
-
                 <button
                     type="button"
                     class="popup-confirm"
@@ -301,9 +284,7 @@
 
                 </button>
 
-
             </div>
-
 
         </div>
 
@@ -325,29 +306,15 @@
         id="updateSuccessPopup"
         class="popup-overlay show">
 
-
         <div class="popup-box">
 
-
-            <!-- ==================== Title ==================== -->
-
             <div class="popup-title">
-
                 Update Successful
-
             </div>
-
-
-            <!-- ==================== Message ==================== -->
 
             <div class="popup-message">
-
                 User details updated successfully.
-
             </div>
-
-
-            <!-- ==================== Button ==================== -->
 
             <div class="popup-buttons">
 
@@ -362,7 +329,6 @@
 
             </div>
 
-
         </div>
 
     </div>
@@ -373,7 +339,7 @@
 
 
 <!-- ================================================= -->
-<!--                UPDATE ERROR POPUP                  -->
+<!--                UPDATE ERROR POPUP                 -->
 <!-- ================================================= -->
 
 <%
@@ -384,29 +350,15 @@
         id="updateErrorPopup"
         class="popup-overlay show">
 
-
         <div class="popup-box">
 
-
-            <!-- ==================== Title ==================== -->
-
             <div class="popup-title">
-
                 Update Failed
-
             </div>
-
-
-            <!-- ==================== Message ==================== -->
 
             <div class="popup-message">
-
                 <%= updateError %>
-
             </div>
-
-
-            <!-- ==================== Button ==================== -->
 
             <div class="popup-buttons">
 
@@ -420,7 +372,6 @@
                 </button>
 
             </div>
-
 
         </div>
 
@@ -436,7 +387,6 @@
 <!-- ================================================= -->
 
 <script>
-
 
     // Get the update form.
 
@@ -469,12 +419,7 @@
         "submit",
         function(event) {
 
-            // Stop the form from submitting immediately.
-
             event.preventDefault();
-
-
-            // Show confirmation popup.
 
             confirmPopup.classList.add("show");
 
@@ -488,8 +433,6 @@
         "click",
         function() {
 
-            // Close confirmation popup.
-
             confirmPopup.classList.remove("show");
 
         }
@@ -502,12 +445,7 @@
         "click",
         function() {
 
-            // Close confirmation popup.
-
             confirmPopup.classList.remove("show");
-
-
-            // Submit the update form.
 
             updateForm.submit();
 
@@ -532,10 +470,8 @@
     );
 
 
-    /*
-     * Go to the user list
-     * after successful update.
-     */
+    // Go to the user list
+    // after successful update.
 
     function goToList() {
 
@@ -544,9 +480,7 @@
     }
 
 
-    /*
-     * Close the update error popup.
-     */
+    // Close the update error popup.
 
     function closeUpdateErrorPopup() {
 
@@ -554,7 +488,6 @@
                 .style.display = "none";
 
     }
-
 
 </script>
 

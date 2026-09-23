@@ -34,11 +34,11 @@ public class UserWebServiceClient {
         webService.updateUser(user);
     }
 
-    public static User findUser(int userId) {
-        return webService.findUser(userId);
-    }
-
     public static void deleteUser(User user) {
         webService.deleteUser(user);
+    }
+
+    public static User findUser(String searchType, String value) {
+        return webService.findUser(searchType, value);
     }
 }

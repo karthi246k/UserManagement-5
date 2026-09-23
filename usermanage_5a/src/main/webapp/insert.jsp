@@ -4,6 +4,13 @@
 
     String insertError =
             (String) request.getAttribute("insertError");
+
+    String username =
+            request.getParameter("username");
+
+    if (username == null) {
+        username = "rahul_menon";
+    }
 %>
 
 <!DOCTYPE html>
@@ -41,8 +48,6 @@
                 Home
             </a>
 
-
-
         </div>
 
     </nav>
@@ -70,7 +75,8 @@
                         action="insert"
                         method="post"
                         class="user-form"
-                        id="userForm">
+                        id="userForm"
+                        autocomplete="off">
 
 
                         <!-- ==================== User Details ==================== -->
@@ -83,6 +89,22 @@
 
 
                             <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label for="username">
+                                        Username
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="username"
+                                        name="username"
+                                        value="<%= username %>"
+                                        required>
+
+                                </div>
 
 
                                 <div class="form-group">
@@ -420,7 +442,6 @@
                     The user and address details have been added successfully.
                 </p>
 
-
                 <button
                     type="button"
                     class="popup-ok-btn"
@@ -459,7 +480,6 @@
                     <%= insertError %>
                 </p>
 
-
                 <button
                     type="button"
                     class="popup-ok-btn"
@@ -482,25 +502,20 @@
 
     <script>
 
-
         function showConfirmPopup() {
 
             const form =
                 document.getElementById("userForm");
-
 
             if (!form.checkValidity()) {
 
                 form.reportValidity();
 
                 return;
-
             }
-
 
             document.getElementById("confirmPopup")
                     .style.display = "flex";
-
         }
 
 
@@ -508,7 +523,6 @@
 
             document.getElementById("confirmPopup")
                     .style.display = "none";
-
         }
 
 
@@ -524,8 +538,10 @@
             const form =
                 document.getElementById("userForm");
 
+            const inputs =
+                form.querySelectorAll("input");
 
-            form.querySelectorAll("input").forEach(function(input) {
+            inputs.forEach(function(input) {
 
                 input.value = "";
 
@@ -553,7 +569,6 @@
             window.location.href = "insert";
 
         }
-
 
     </script>
 

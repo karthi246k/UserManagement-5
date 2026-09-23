@@ -23,5 +23,5 @@ public interface UserWebService {
     List<User> listAllUsers();
 
     @WebMethod
-    User findUser(int userId);
+    User findUser(String searchType, String value);
 }

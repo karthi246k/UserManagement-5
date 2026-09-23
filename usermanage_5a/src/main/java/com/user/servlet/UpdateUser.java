@@ -8,7 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.user.client.UserWebServiceClient;
-import com.user.model.*;
+import com.user.model.Address;
+import com.user.model.User;
 
 public class UpdateUser extends HttpServlet {
 
@@ -20,7 +21,10 @@ public class UpdateUser extends HttpServlet {
 
             int userId = Integer.parseInt(request.getParameter("id"));
 
-            User user = UserWebServiceClient.findUser(userId);
+            User user = UserWebServiceClient.findUser(
+                    "id",
+                    String.valueOf(userId)
+            );
 
             if (user != null) {
 
@@ -78,7 +82,10 @@ public class UpdateUser extends HttpServlet {
             String officeZipCode =
                     request.getParameter("officeZipCode");
 
-            User user = UserWebServiceClient.findUser(userId);
+            User user = UserWebServiceClient.findUser(
+                    "id",
+                    String.valueOf(userId)
+            );
 
             if (user != null) {
 
@@ -113,7 +120,10 @@ public class UpdateUser extends HttpServlet {
 
             } else {
 
-                request.setAttribute("updateError", "User not found.");
+                request.setAttribute(
+                        "updateError",
+                        "User not found."
+                );
             }
 
         } catch (Exception e) {
@@ -131,7 +141,10 @@ public class UpdateUser extends HttpServlet {
                         Integer.parseInt(request.getParameter("id"));
 
                 User user =
-                        UserWebServiceClient.findUser(userId);
+                        UserWebServiceClient.findUser(
+                                "id",
+                                String.valueOf(userId)
+                        );
 
                 request.setAttribute("user", user);
 

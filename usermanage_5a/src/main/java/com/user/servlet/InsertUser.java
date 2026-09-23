@@ -8,7 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.user.client.UserWebServiceClient;
-import com.user.model.*;
+import com.user.model.Address;
+import com.user.model.User;
 
 public class InsertUser extends HttpServlet {
 
@@ -25,13 +26,31 @@ public class InsertUser extends HttpServlet {
 
         try {
 
+            String username = request.getParameter("username");
             String name = request.getParameter("name");
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
 
+            User existingUser =
+                    UserWebServiceClient.findUser("username", username);
+
+            if (existingUser != null) {
+
+                request.setAttribute(
+                        "insertError",
+                        "Username already exists. Please choose another username."
+                );
+
+                request.getRequestDispatcher("insert.jsp")
+                       .forward(request, response);
+
+                return;
+            }
+
             Address homeAddress = new Address();
 
-            homeAddress.setStreetAddress(request.getParameter("homeStreetAddress"));
+            homeAddress.setStreetAddress(
+                    request.getParameter("homeStreetAddress"));
 
             homeAddress.setCity(
                     request.getParameter("homeCity"));
@@ -58,6 +77,7 @@ public class InsertUser extends HttpServlet {
 
             User user = new User();
 
+            user.setUsername(username);
             user.setName(name);
             user.setPhone(phone);
             user.setEmail(email);
@@ -69,8 +89,7 @@ public class InsertUser extends HttpServlet {
 
             request.setAttribute("insertSuccess", true);
 
-            request.getRequestDispatcher("insert.jsp")
-                   .forward(request, response);
+            request.getRequestDispatcher("insert.jsp").forward(request, response);
 
         } catch (Exception e) {
 

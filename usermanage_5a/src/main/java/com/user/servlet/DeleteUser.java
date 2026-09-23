@@ -22,7 +22,10 @@ public class DeleteUser extends HttpServlet {
                     request.getParameter("id")
             );
 
-            User user = UserWebServiceClient.findUser(userId);
+            User user = UserWebServiceClient.findUser(
+                    "id",
+                    String.valueOf(userId)
+            );
 
             if (user != null) {
 

@@ -13,17 +13,15 @@ import jakarta.persistence.Table;
 @Table(name = "user_5a")
 public class User {
 
-    // Primary key generated automatically by the database.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    // User details.
+    private String username;
     private String name;
     private String phone;
     private String email;
 
-    // Home address relationship.
     @OneToOne(cascade = {
         CascadeType.PERSIST,
         CascadeType.MERGE,
@@ -32,7 +30,6 @@ public class User {
     @JoinColumn(name = "homeAddressId")
     private Address homeAddress;
 
-    //Office address relationship.
     @OneToOne(cascade = {
         CascadeType.PERSIST,
         CascadeType.MERGE,
@@ -40,8 +37,6 @@ public class User {
     })
     @JoinColumn(name = "officeAddressId")
     private Address officeAddress;
-
-    // ==================== Getters and Setters ====================
 
     public int getId() {
         return id;
@@ -51,6 +46,13 @@ public class User {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getName() {
         return name;
@@ -60,7 +62,6 @@ public class User {
         this.name = name;
     }
 
-
     public String getPhone() {
         return phone;
     }
@@ -68,7 +69,6 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 
     public String getEmail() {
         return email;
@@ -78,7 +78,6 @@ public class User {
         this.email = email;
     }
 
-
     public Address getHomeAddress() {
         return homeAddress;
     }
@@ -86,7 +85,6 @@ public class User {
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
     }
-
 
     public Address getOfficeAddress() {
         return officeAddress;
