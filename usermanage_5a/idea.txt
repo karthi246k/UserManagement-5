@@ -57,3 +57,18 @@ UserWebServiceImpl
 DataAccess
    ↓
 Hibernate
+
+
+UserWebService.java → defines the contract
+UserWebServiceImpl.java → contains the logic
+beans.xml → tells CXF to publish that implementation as an endpoint
+UserWebServiceClient.java → creates the CXF proxy and calls the remote web service
+
+
+UserWebService.java → Defines the web service contract and declares the methods that clients can call.
+UserWebServiceImpl.java → Provides the actual implementation of those methods and calls DataAccess to perform database operations.
+beans.xml → Configures Apache CXF to create and expose the web service endpoint using UserWebServiceImpl.
+It tells CXF which implementation class to expose as a web service and at what endpoint/addres
+
+UserWebServiceClient.java → Creates a CXF proxy for the web service and uses it to call the remote service methods.
+It creates a local Java object (proxy) that represents the remote web service, so your servlet can call methods like findUser() and insertUser() as if they were normal Java methods.
